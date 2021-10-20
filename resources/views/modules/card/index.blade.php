@@ -18,9 +18,14 @@
                         <thead>
                             <tr>
                                 <th>Nombre</th>
+                                <hr>
                                 <th>Imagen</th>
+                                <hr>
                                 <th>Rol</th>
+                                <hr>
                                 <th>Estado</th>
+                                <hr>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,6 +41,9 @@
                                 </td>
                                 <td>{{ $card->rol }}</td>
                                 <td>{{ $card->state }}</td>
+                                <td>
+                                    <a href="{{ route('cards.show',$card) }}">Ver</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

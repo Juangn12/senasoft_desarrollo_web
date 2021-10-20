@@ -62,11 +62,13 @@ class CardController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|Response
      */
-    public function show($id)
+    public function show(Card $card)
     {
-        //
+        return view('modules.card.show',[
+            'card' => $card,
+        ]);
     }
 
     /**
