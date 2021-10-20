@@ -14,9 +14,10 @@ class CreateDecksTable extends Migration
     public function up()
     {
         Schema::create('decks', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id()->unsigned();
             $table->unsignedBigInteger('players_id')->index('fk_decks_players1_idx');
             $table->unsignedBigInteger('cards_id')->index('fk_decks_cards1_idx');
+            $table->timestamps();
         });
     }
 

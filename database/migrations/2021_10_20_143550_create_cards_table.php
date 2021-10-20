@@ -14,11 +14,12 @@ class CreateCardsTable extends Migration
     public function up()
     {
         Schema::create('cards', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id()->unsigned();
             $table->string('name', 45);
             $table->string('photo', 150);
             $table->enum('rol', ['Programadores', 'Modulo', 'Tipo de Error']);
             $table->enum('state', ['Activo', 'Inactivo'])->nullable();
+            $table->timestamps();
         });
     }
 
