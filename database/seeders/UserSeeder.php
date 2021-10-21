@@ -21,15 +21,5 @@ class UserSeeder extends Seeder
             'password' => bcrypt('123456789'),
             'state' => 'Activo',
         ])->assignRole('Administrador');
-
-        User::create([
-            'identification' => 2222212124,
-            'name' => 'Jose',
-            'email' => 'josejose@misena.edu.co',
-            'password' => bcrypt('123456789'),
-            'state' => 'Activo',
-        ])->assignRole('Jugador');
-
-
     }
 }
