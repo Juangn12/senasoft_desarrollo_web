@@ -25,7 +25,7 @@ class SaveCardRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'photo' => 'required',
+            'photo' => 'nullable',
             'rol' => 'required',
             'state' => 'required'
         ];

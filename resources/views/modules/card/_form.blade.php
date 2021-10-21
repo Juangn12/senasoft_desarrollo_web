@@ -1,29 +1,29 @@
 @csrf
 <div>
-    <x-label for="name" :value="__('Nombre')" />
-        <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+    <label for="name">Nombre</label>
+        <input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ old('name', $card->name) }}" required autofocus />
         <div>
-            <x-label for="photo" :value="__('Foto')" />
-                <x-input id="photo" class="block" type="file" name="photo" />
+            <label for="photo">Foto</label>
+                <input id="photo" class="block" type="file" name="photo" />
         </div>
-    <x-label for="rol" :value="__('Rol')" />
+    <label for="rol">Rol</label>
         <select name="rol" id="rol" required>
-            <option value="">Seleccione</option>
-            <option value="Programadores">Programadores</option>
-            <option value="Modulo">Modulo</option>
-            <option value="TipoError">Tipo de Error</option>
+            <option value="" >Seleccione</option>
+            <option value="Programadores"{{ old('rol', $card->rol)== 'Programadores'? 'selected': ''}}>Programadores</option>
+            <option value="Modulo" {{ old('rol', $card->rol)== 'Modulo'? 'selected': ''}}>Modulo</option>
+            <option value="TipoError" {{ old('rol', $card->rol)== 'TipoError'? 'selected': ''}}>Tipo de Error</option>
         </select>
-    <x-label for="state" :value="__('Estado')" />
+    <label for="state">Estado</label>
         <select name="state" id="state" required>
             <option value="">Seleccione</option>
-            <option value="Activo">Activo</option>
-            <option value="Inactivo">Inactivo</option>
+            <option value="Activo" {{ old('rol', $card->state)== 'Activo'? 'selected': ''}}>Activo</option>
+            <option value="Inactivo" {{ old('rol', $card->state)== 'Inactivo'? 'selected': ''}}>Inactivo</option>
         </select>
 </div>
 <div class="flex items-center justify-end mt-4">
     <a href="{{ route('cards.index') }}">Cancelar</a>
     <hr>
-    <x-button type="submit" class="ml-4">
-        {{ __('Crear')}}
-    </x-button>
+    <button type="submit" class="ml-4">
+        {{ $btnText }}
+    </button>
 </div>

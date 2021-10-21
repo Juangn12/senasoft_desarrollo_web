@@ -6,6 +6,7 @@ use App\Http\Requests\SaveCardRequest;
 use App\Models\Card;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class CardController extends Controller
 {
@@ -75,11 +76,13 @@ class CardController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|Response
      */
-    public function edit($id)
+    public function edit(Card $card)
     {
-        //
+        return view('modules.card.edit',[
+            'card' => $card,
+        ]);
     }
 
     /**
@@ -87,11 +90,20 @@ class CardController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Card $card, SaveCardRequest $request)
     {
-        //
+        if ( $request->hasFile('photo'))
+        {
+            Storage::delete($card->photo);
+            $card->fill($request->validated());
+            $card->photo = $request->file('photo')->store('images');
+            $card->save();
+        }else{
+            $card->update($request->validated());
+        }
+        return redirect()->route('cards.show',$card);
     }
 
     /**

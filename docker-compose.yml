@@ -37,8 +37,6 @@ services:
             - 'sailmysql:/var/lib/mysql'
         networks:
             - sail
-        cap_add:
-            - SYS_NICE  # CAP_SYS_NICE
         healthcheck:
             test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
             retries: 3

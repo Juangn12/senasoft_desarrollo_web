@@ -43,6 +43,7 @@
                                 <td>{{ $card->state }}</td>
                                 <td>
                                     <a href="{{ route('cards.show',$card) }}">Ver</a>
+                                    <a href="{{ route('cards.edit',$card) }}">Editar</a>
                                 </td>
                             </tr>
                         @endforeach
