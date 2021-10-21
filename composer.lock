@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dbe1daef2bf149bf18cde4d2f91541e",
+    "content-hash": "956b4b2739c027cfe4b6622df2503e9c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1765,6 +1765,63 @@
                 }
             ],
             "time": "2021-10-01T21:08:31+00:00"
+        },
+        {
+            "name": "moonbaselabs/blade-components",
+            "version": "v0.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moonbaselabs/blade-components.git",
+                "reference": "5b28de1b1e8245f9a0e0f828ec55c4012a857727"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moonbaselabs/blade-components/zipball/5b28de1b1e8245f9a0e0f828ec55c4012a857727",
+                "reference": "5b28de1b1e8245f9a0e0f828ec55c4012a857727",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^7.0|^8.0",
+                "illuminate/view": "^7.0|^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MoonbaseLabs\\BladeComponents\\BladeComponentsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MoonbaseLabs\\BladeComponents\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Taylor",
+                    "homepage": "https://imacrayon.com"
+                }
+            ],
+            "description": "A set of themeable components built with Tailwind CSS and AlpineJS for use with Laravel Blade.",
+            "homepage": "https://github.com/moonbaselabs/blade-components",
+            "keywords": [
+                "alpinejs",
+                "blade",
+                "laravel",
+                "tailwind",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/moonbaselabs/blade-components/issues",
+                "source": "https://github.com/moonbaselabs/blade-components"
+            },
+            "time": "2021-09-03T18:52:53+00:00"
         },
         {
             "name": "nesbot/carbon",

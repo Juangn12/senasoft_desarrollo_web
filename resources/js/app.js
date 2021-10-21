@@ -1,3 +1,7 @@
-require('./bootstrap');
+import './bootstrap';
+import './blade-components';
+import Alpine from 'alpinejs'
 
-require('alpinejs');
+window.Alpine = Alpine
+
+Alpine.start()

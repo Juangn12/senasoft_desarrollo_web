@@ -9,13 +9,23 @@
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Inicio') }}
                     </x-nav-link>
+                    @can('cards.edit')
+
+                        <x-nav-link-parent :href="'#'" :active="request()->routeIs('cards.*')">
+                            <x-slot name="name">Cards</x-slot>
+                            <x-slot name="children">
+                                <a href="{{ route('cards.create') }}">Crear</a>
+                                <a href="{{ route('cards.index') }}">Gestionar</a>
+                            </x-slot>
+                        </x-nav-link-parent>
+                    @endcan
                 </div>
+
             </div>
 
             <!-- Settings Dropdown -->
@@ -37,6 +47,9 @@
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
+                            <x-dropdown-link :href="route('profile')">
+                                {{ __('Profile') }}
+                            </x-dropdown-link>
 
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
@@ -66,6 +79,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @can('cards.edit')
+                <x-responsive-nav-link :href="route('cards.index')" :active="request()->routeIs('cards')">
+                    {{ __('Cards') }}
+                </x-responsive-nav-link>
+            @endcan
+
         </div>
 
         <!-- Responsive Settings Options -->
@@ -79,6 +98,10 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
+
+                    <x-responsive-nav-link :href="route('profile')">
+                        {{ __('Profile') }}
+                    </x-responsive-nav-link>
 
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
