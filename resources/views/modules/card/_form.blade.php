@@ -4,7 +4,7 @@
         <input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ old('name', $card->name) }}" required autofocus />
         <div>
             <label for="photo">Foto</label>
-                <input id="photo" class="block" type="file" name="photo" required/>
+                <input id="photo" class="block" type="file" name="photo" {{ $exigencia }}/>
         </div>
     <label for="rol">Rol</label>
         <select name="rol" id="rol" required>

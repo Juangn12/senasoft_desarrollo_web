@@ -13,7 +13,7 @@
                           enctype="multipart/form-data"
                           action="{{ route('cards.update', $card) }}">
                         @method('PUT')
-                        @include('modules.card._form',['btnText' => 'Guardar'])
+                        @include('modules.card._form',['btnText' => 'Guardar', 'exigencia' => ''])
                     </form>
                 </div>
             </div>
