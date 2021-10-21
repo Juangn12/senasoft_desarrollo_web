@@ -42,8 +42,13 @@
                                 <td>{{ $card->rol }}</td>
                                 <td>{{ $card->state }}</td>
                                 <td>
+                                    <form method="POST" action="{{ route('cards.destroy', $card) }}">
                                     <a href="{{ route('cards.show',$card) }}">Ver</a>
                                     <a href="{{ route('cards.edit',$card) }}">Editar</a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">Eliminar</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

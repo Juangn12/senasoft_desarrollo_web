@@ -110,10 +110,12 @@ class CardController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Card $card)
     {
-        //
+        Storage::delete($card->photo);
+        $card->delete();
+        return redirect()->route('cards.index');
     }
 }
