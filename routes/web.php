@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +31,9 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::resource('/cards', 'App\Http\Controllers\CardController')
         ->names('cards');
+
+    Route::resource('/games','App\Http\Controllers\Game\GameController')->names('games');
 });
 
 require __DIR__.'/auth.php';
-
-
-
 

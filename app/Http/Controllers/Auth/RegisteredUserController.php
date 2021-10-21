@@ -47,6 +47,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'state' => 'Activo',
         ]);
+        $user->roles()->sync(2);
 
         event(new Registered($user));
 
