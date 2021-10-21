@@ -25,3 +25,4 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('/cards', 'App\Http\Controllers\CardController')->names('cards');
+Route::resource('/games','App\Http\Controllers\Game\GameController')->names('games');
