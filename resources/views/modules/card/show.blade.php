@@ -14,22 +14,26 @@
                             <div class="relative flex items-top justify-center max-w-7xl mx-auto sm:px-6 lg:px-8">
                                 <img
                                     src="{{ '/storage/'.$card->photo }} "
-                                    alt="{{ $card->name }}">
+                                    alt="{{ $card->name }}" width="50%">
                             </div>
-                            <div class="relative flex items-top justify-center max-w-7xl mx-auto sm:px-6 lg:px-8">
-                                <br>
-                                <hr>
-                                <strong><i class="fas fa-sort-numeric-up-alt"></i>&nbsp;Nombre</strong>
-                                <p class="fond-semibold">{{ $card->name }}</p>
-                                <hr>
-                                <br>
-                                <strong><i class="far fa-file-alt mr-1"></i>&nbsp;Rol</strong>
-                                <p class="text-muted">{{ $card->rol }}</p>
-                                <hr>
-                                <br>
-                                <strong><i class="far fa-file-alt mr-1"></i>&nbsp;Estado</strong>
-                                <p class="text-muted">{{ $card->state }}</p>
-                                <hr>
+                            <div class="relative flex items-top object-left text-left">
+
+                                <x-table>
+                                    <x-slot name="header">
+                                    </x-slot>
+                                    <tr>
+                                        <x-table-column><strong>Nombre</strong></x-table-column>
+                                        <x-table-column>{{ $card->name }}</x-table-column>
+                                    </tr>
+                                    <tr>
+                                        <x-table-column><strong>Rol</strong></x-table-column>
+                                        <x-table-column>{{ $card->rol }}</x-table-column>
+                                    </tr>
+                                    <tr>
+                                        <x-table-column><strong>Estado</strong></x-table-column>
+                                        <x-table-column>{{ $card->state }}</x-table-column>
+                                    </tr>
+                                </x-table>
                             </div>
                         </div>
                         <div class="flex items-center justify-end mt-4">
