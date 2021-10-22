@@ -15,7 +15,6 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                     @can('cards.edit')
-
                         <x-nav-link-parent :href="'#'" :active="request()->routeIs('cards.*')">
                             <x-slot name="name">Cards</x-slot>
                             <x-slot name="children">
