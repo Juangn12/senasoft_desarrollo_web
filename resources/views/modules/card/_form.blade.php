@@ -1,6 +1,5 @@
 @csrf
 <div>
-
         @method('PUT')
         @csrf
         <div class="grid grid-cols-2 gap-6">
