@@ -1,64 +1,16 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Encuentra el bug en el sistema
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### Tecnologías utilizadas
+Para el desarrollo de esta prueba decidimos utilizar un grupo tecnologías bastante conocidas y fuertemente implementadas en la industria del desarrollo por su
+gran funcionalidad, además de que gozan de una documentación completa apoyada por grandes comunidades de desarrolladores que facilitan su implementación
+de estas herramientas las cuales voy a nombrar a continuación:
 
-## About Laravel
+- [**Laravel 8:**](https://laravel.com/docs/8.x) Es un framework de PHP para desarrollo web el cual utilizamos para implementar el backend de la prueba, también nos suministró una estable compatibilidad con las demás herramientas.
+- [**Laravel Breeze:**](https://laravel.com/docs/8.x/starter-kits#laravel-breeze) Utilizamos Laravel Breeze el cual es un pluguin para aplicaciones creadas con Laravel que incluye los componentes y las vistas necesarias para la autenticación de usuarios. Utiliza el motor Blade de Laravel para las vistas y Tailwind como framework CSS.
+- [**Laravel Sail:**](https://laravel.com/docs/8.x/sail) Es una interfaz de línea de comandos liviana para Laravel que nos permite interactuar con el entorno de desarrollo de Docker creando un docker-compose con diversos contenedores seleccionables desde la línea de comandos. Acá también podemos exportar la configuración a archivos docker-file.
+- [**Docker:**](https://docs.docker.com/) Es un sistema operativo que empaqueta software en "contenedores" el cual incluye en estos todo lo necesario para que dicho software se ejecute sin problema en cualquier entorno.
+- [**Laravel-permission:**](https://spatie.be/docs/laravel-permission/v5/introduction) Este paquete nos permitió asociar a nuestros usuarios con roles y permisos en nuestra base de datos para después poder trabajar dentro de la página con estos roles a dependiendo de nuestras necesidades.
+- [**Tailwindcss:**](https://tailwindcss.com/docs) Utilizamos Tailwindcss junto [Alpine.js](https://alpinejs.dev/start-here) para el diseño de formularios e interacción con el usuario.
+- [**Laravel Echo:**](https://laravel.com/docs/8.x/broadcasting) Es una librería de JavaScript que sirve para conectarnos a un servidor de websocket (en este caso Pusher)  para implementar la interfaz del usuario de actualización en tiempo real. Íbamos a utilizar esta herramienta para la interfaz del juego, pero no la alcanzamos a implementar.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
