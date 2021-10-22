@@ -15,16 +15,14 @@
                     </div>
                     <div class="card-body">
 
-                        <table class="w-full whitespace-no-wrapw-full whitespace-no-wrap">
-                            <thead>
-                            <tr class="text-center font-bold">
+                        <x-table>
+                            <x-slot name="header">
                                 <x-table-column>Nombre</x-table-column>
                                 <x-table-column>Imagen</x-table-column>
                                 <x-table-column>Rol</x-table-column>
                                 <x-table-column>Estado</x-table-column>
                                 <x-table-column>Acciones</x-table-column>
-                            </tr>
-                            </thead>
+                            </x-slot>
                             @foreach($cards as $card)
                                 <tr>
                                     <x-table-column>{{$card->name }}</x-table-column>
@@ -48,8 +46,7 @@
                                     </x-table-column>
                                 </tr>
                             @endforeach
-                        </table>
-
+                        </x-table>
                     </div>
                     <div class="card-footer">
                         {{--Aca se pueden colocar los links de paginacion--}}
