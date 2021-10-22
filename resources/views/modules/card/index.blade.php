@@ -8,58 +8,48 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <h1>Index de cards</h1>
-                </div>
-                <div>
-                    <a class="btn btn-primary" href="{{ route('cards.create') }}">Crear carta</a>
-                </div>
                 <div class="card">
                     <div class="card-header">
                         {{--Aca se puede agregar el filtrador de datos--}}
                          <!-- input class="form-control" type="" -->
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped">
+
+                        <table class="w-full whitespace-no-wrapw-full whitespace-no-wrap">
                             <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <hr>
-                                    <th>Imagen</th>
-                                    <hr>
-                                    <th>Rol</th>
-                                    <hr>
-                                    <th>Estado</th>
-                                    <hr>
-                                    <th>Acciones</th>
-                                </tr>
+                            <tr class="text-center font-bold">
+                                <x-table-column>Nombre</x-table-column>
+                                <x-table-column>Imagen</x-table-column>
+                                <x-table-column>Rol</x-table-column>
+                                <x-table-column>Estado</x-table-column>
+                                <x-table-column>Acciones</x-table-column>
+                            </tr>
                             </thead>
-                            <tbody>
                             @foreach($cards as $card)
                                 <tr>
-                                    <td>{{ $card->name }}</td>
-                                        <td>
-                                            @if(!empty($card->photo))
-                                                <span>Si hay imagen</span>
-                                            @else
-                                                <span>No hay imagen</span>
-                                            @endif
-                                        </td>
-                                    <td>{{ $card->rol }}</td>
-                                    <td>{{ $card->state }}</td>
-                                        <td width="10px">
-                                            <form method="POST" action="{{ route('cards.destroy', $card) }}">
+                                    <x-table-column>{{$card->name }}</x-table-column>
+                                    <x-table-column>
+                                        @if(!empty($card->photo))
+                                            <span>Si hay imagen</span>
+                                        @else
+                                            <span>No hay imagen</span>
+                                        @endif
+                                    </x-table-column>
+                                    <x-table-column>{{ $card->rol }}</x-table-column>
+                                    <x-table-column>{{$card->state}}</x-table-column>
+                                    <x-table-column>
+                                        <form method="POST" action="{{ route('cards.destroy', $card) }}">
                                             <a class="btn btn-primary" href="{{ route('cards.show',$card) }}">Ver</a>
                                             <a class="btn btn-primary" href="{{ route('cards.edit',$card) }}">Editar</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit">Eliminar</button>
-                                            </form>
-                                        </td>
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">Eliminar</button>
+                                        </form>
+                                    </x-table-column>
                                 </tr>
                             @endforeach
-                            </tbody>
                         </table>
+
                     </div>
                     <div class="card-footer">
                         {{--Aca se pueden colocar los links de paginacion--}}

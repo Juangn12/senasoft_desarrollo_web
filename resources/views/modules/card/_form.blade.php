@@ -24,9 +24,9 @@
 </div>
 
 <div class="flex items-center justify-end mt-4">
-    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('cards.index') }}">
+    <x-button class="text-black" href="{{ route('cards.index') }}">
         {{ __('Cancelar') }}
-    </a>
+    </x-button>
     <x-button class="ml-3">
         {{ $btnText }}
     </x-button>
