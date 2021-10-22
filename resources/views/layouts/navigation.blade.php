@@ -23,6 +23,13 @@
                             </x-slot>
                         </x-nav-link-parent>
                     @endcan
+                    <x-nav-link-parent :href="'#'" :active="request()->routeIs('games.*')">
+                        <x-slot name="name">Partida</x-slot>
+                        <x-slot name="children">
+                            <a href="{{ route('games.create') }}">Crear</a>
+                            <a href="#">Unirse</a>
+                        </x-slot>
+                    </x-nav-link-parent>
                 </div>
 
             </div>
@@ -83,7 +90,9 @@
                     {{ __('Cards') }}
                 </x-responsive-nav-link>
             @endcan
-
+            <x-responsive-nav-link :href="route('games.create')" :active="request()->routeIs('games')">
+                {{ __('Crear Partida') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

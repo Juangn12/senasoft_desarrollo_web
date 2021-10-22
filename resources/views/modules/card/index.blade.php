@@ -37,11 +37,11 @@
                                     <x-table-column>{{$card->state}}</x-table-column>
                                     <x-table-column>
                                         <form method="POST" action="{{ route('cards.destroy', $card) }}">
-                                            <a class="btn btn-primary" href="{{ route('cards.show',$card) }}">Ver</a>
-                                            <a class="btn btn-primary" href="{{ route('cards.edit',$card) }}">Editar</a>
+                                            <x-badge theme="indigo"><a href="{{ route('cards.show',$card) }}">Ver</a></x-badge>
+                                            <x-badge theme="yellow"><a href="{{ route('cards.edit',$card) }}">Editar</a></x-badge>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">Eliminar</button>
+                                            <x-badge theme="red"><button type="submit">Eliminar</button></x-badge>
                                         </form>
                                     </x-table-column>
                                 </tr>
