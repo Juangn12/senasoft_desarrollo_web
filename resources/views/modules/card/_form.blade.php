@@ -18,7 +18,7 @@
         <div>
             <x-label for="state" :value="__('Estado')"></x-label>
             <?php $options = ['' => 'Seleccione', 'Activo' => 'Activo', 'Inactivo' => 'Inactivo'];?>
-            <x-select name="state" id="state" :options="$options" value="{{ old('state', $card->rol) }}" required>  </x-select>
+            <x-select name="state" id="state" :options="$options" value="{{ old('state', $card->state) }}" required>  </x-select>
         </div>
     </div>
 </div>
