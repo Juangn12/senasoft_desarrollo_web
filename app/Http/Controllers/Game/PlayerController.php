@@ -1,14 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Game;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Card;
 use Illuminate\Http\Request;
-use App\Models\Game;
-use Illuminate\Support\Str;
 
-class GameController extends Controller
+class PlayerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,33 +23,25 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('Game.create-game',[
-            'game' => $game = new Game,
-        ]);
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $newCodigo = ""; $gameTmp = "";
-        do{
-            $newCodigo = Str::random(5);//genera un codigo nuevo
-            $gameTmp = Game::select('codigo')->where('codigo', $newCodigo)->first();//pregunta si ya hay un codigo igual en la BD
-        }while($gameTmp !== null);//si efectivamente encontro un codigo igual repite el ciclo
-
-        $game = Game::create([
-            'codigo' => $newCodigo,
-            'programmer_id' => Card::select('id')->where('rol','Programadores')->inRandomOrder()->first()->id,
-            'modulo_id' => Card::select('id')->where('rol','Modulo')->inRandomOrder()->first()->id,
-            'type_error_id' => Card::select('id')->where('rol','Tipo de Error')->inRandomOrder()->first()->id,
+        /* $player = Player::create([
+            'games_id' => ,
+            'users_id' => ,
+            'order' =>,//1, 2, 3 o 4
+            'role' => ,//Administrador o Invitado
+            'state' => , //Activo o Inactivo
         ]);
-        $game->save();
-        return redirect()->route('games.show',$game);
+        $player->save(); */
     }
 
     /**
@@ -62,11 +50,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
+    public function show($id)
     {
-        return view('Game.lobby-game',[
-           'game' => $game,
-        ]);
+        //
     }
 
     /**

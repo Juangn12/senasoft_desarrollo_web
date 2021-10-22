@@ -7,7 +7,7 @@
         <div class="">
             <form method="POST" action="{{ route('games.store') }}">
                 @csrf
-                <button>Generar  codigo</button>
+                <button type="submit">Generar  codigo</button>
             </form>
         </div>
 </x-app-layout>
