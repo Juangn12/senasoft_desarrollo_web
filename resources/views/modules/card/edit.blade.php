@@ -12,6 +12,7 @@
                     <form method="POST"
                           enctype="multipart/form-data"
                           action="{{ route('cards.update', $card) }}">
+                        @csrf
                         @method('PUT')
                         @include('modules.card._form',['btnText' => 'Guardar', 'exigencia' => ''])
                     </form>

@@ -10,7 +10,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <form method="POST" enctype="multipart/form-data" action="{{ route('cards.store') }}">
                         @csrf
-                        @method('PUT')
+                        @method('POST')
                         @include('modules.card._form',['btnText' => 'Crear', 'exigencia' => 'required'])
                     </form>
                 </div>
